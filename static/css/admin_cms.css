@@ -1,0 +1,513 @@
+/* ============================================================
+   Garima Raj Portfolio - CMS & Auto-Sync Admin Controller Hub
+   Theme: Pastel Rose (#EC709A) + Matcha Green (#5B7B1B) + Glass
+   ============================================================ */
+
+/* Floating Controller Pill Button - Placed neatly at BOTTOM-LEFT */
+#cms-controller-btn {
+  position: fixed;
+  bottom: 22px;
+  left: 22px;
+  z-index: 99990;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 2px solid #F8C8D8;
+  border-radius: 9999px;
+  box-shadow: 0 8px 24px -6px rgba(236, 112, 154, 0.35);
+  color: #D45E88;
+  font-family: 'Fredoka', 'Quicksand', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#cms-controller-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: #FFF;
+  border-color: #EC709A;
+  box-shadow: 0 12px 28px -4px rgba(236, 112, 154, 0.5);
+}
+
+#cms-controller-btn .pulsing-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-green 1.8s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Modal Backdrop */
+#cms-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(36, 22, 16, 0.55);
+  backdrop-filter: blur(8px);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+#cms-modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Main Hub Dialog */
+#cms-hub-dialog {
+  width: 100%;
+  max-width: 940px;
+  height: 88vh;
+  max-height: 740px;
+  background: #FFFDFD;
+  border: 2px solid #F8C8D8;
+  border-radius: 28px;
+  box-shadow: 0 25px 60px -15px rgba(212, 94, 136, 0.4);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.94);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#cms-modal-backdrop.open #cms-hub-dialog {
+  transform: scale(1);
+}
+
+/* Header */
+.cms-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #FFF0F5 0%, #FFF7FA 100%);
+  border-bottom: 2px solid #FCE4EC;
+}
+
+.cms-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cms-header-title h2 {
+  margin: 0;
+  font-family: 'Fredoka', 'Quicksand', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #5B7B1B;
+}
+
+.cms-header-badge {
+  background: #FDF2F8;
+  color: #D45E88;
+  border: 1.5px solid #F8C8D8;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.cms-close-btn {
+  background: #FFF;
+  border: 1.5px solid #F8C8D8;
+  color: #D45E88;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cms-close-btn:hover {
+  background: #EC709A;
+  color: #FFF;
+  border-color: #EC709A;
+  transform: rotate(90deg);
+}
+
+/* Nav Tabs */
+.cms-nav-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 10px 20px;
+  background: #FFF7FA;
+  border-bottom: 1px solid #FCE4EC;
+  overflow-x: auto;
+}
+
+.cms-tab-btn {
+  padding: 8px 18px;
+  background: transparent;
+  border: 1.5px solid transparent;
+  border-radius: 14px;
+  color: #6B7280;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.cms-tab-btn:hover {
+  color: #D45E88;
+  background: #FFF;
+}
+
+.cms-tab-btn.active {
+  color: #D45E88;
+  background: #FFF;
+  border-color: #F8C8D8;
+  box-shadow: 0 4px 12px -2px rgba(236, 112, 154, 0.2);
+}
+
+/* Tab Panels Container */
+.cms-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+  background: #FFFDFD;
+}
+
+.cms-panel {
+  display: none;
+  height: 100%;
+}
+
+.cms-panel.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modern AI Chat Assistant Box */
+.cms-chat-box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 480px;
+  border: 1.5px solid #F8C8D8;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #FFF;
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cms-chat-box.dragover {
+  border: 2px dashed #EC709A;
+  background: #FFF5F8;
+  box-shadow: 0 0 0 6px rgba(236, 112, 154, 0.15);
+}
+
+.cms-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #FFFDFD;
+}
+
+.cms-msg {
+  max-width: 82%;
+  padding: 12px 18px;
+  border-radius: 18px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  word-break: break-word;
+  position: relative;
+}
+
+.cms-msg.bot {
+  align-self: flex-start;
+  background: #FFF0F5;
+  border: 1.5px solid #F8C8D8;
+  color: #241610;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 4px 14px -3px rgba(236, 112, 154, 0.1);
+}
+
+.cms-msg.user {
+  align-self: flex-end;
+  background: #EC709A;
+  color: #FFF;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 4px 14px -3px rgba(236, 112, 154, 0.3);
+}
+
+.cms-msg-attachment {
+  margin-bottom: 8px;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 280px;
+  max-height: 200px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #000;
+}
+
+.cms-msg-attachment img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+/* Chat Input Area with Attachment Preview Tray */
+.cms-chat-input-container {
+  display: flex;
+  flex-direction: column;
+  background: #FFF7FA;
+  border-top: 1.5px solid #FCE4EC;
+  padding: 10px 14px;
+}
+
+/* Attachment Tray (Shows above input when file selected) */
+#cms-attachment-tray {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background: #FFF;
+  border: 1.5px solid #F8C8D8;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(236, 112, 154, 0.15);
+}
+
+#cms-attachment-tray.active {
+  display: flex;
+}
+
+.cms-tray-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1.5px solid #FCE4EC;
+}
+
+.cms-tray-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cms-tray-filename {
+  font-size: 12px;
+  font-weight: 700;
+  color: #5B7B1B;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 450px;
+}
+
+.cms-tray-hint {
+  font-size: 11px;
+  color: #EC709A;
+  font-weight: 600;
+}
+
+.cms-tray-remove-btn {
+  background: #FFE4EC;
+  color: #D45E88;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.cms-tray-remove-btn:hover {
+  background: #EC709A;
+  color: #FFF;
+}
+
+/* Chat Input Bar */
+.cms-chat-input-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cms-chat-attach-btn {
+  background: #FFF;
+  color: #D45E88;
+  border: 1.5px solid #F8C8D8;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(236, 112, 154, 0.15);
+  flex-shrink: 0;
+}
+
+.cms-chat-attach-btn:hover {
+  background: #EC709A;
+  color: #FFF;
+  border-color: #EC709A;
+  transform: scale(1.06);
+}
+
+.cms-chat-input {
+  flex: 1;
+  padding: 10px 16px;
+  border: 1.5px solid #F8C8D8;
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: 13.5px;
+  outline: none;
+  background: #FFF;
+  color: #241610;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cms-chat-input:focus {
+  border-color: #EC709A;
+  box-shadow: 0 0 0 3px rgba(236, 112, 154, 0.15);
+}
+
+/* Forms & UI Elements */
+.cms-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.cms-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.cms-field label {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #5B7B1B;
+}
+
+.cms-input, .cms-textarea, .cms-select {
+  padding: 9px 13px;
+  background: #FFF;
+  border: 1.5px solid #F8C8D8;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #241610;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cms-input:focus, .cms-textarea:focus, .cms-select:focus {
+  border-color: #EC709A;
+  box-shadow: 0 0 0 3px rgba(236, 112, 154, 0.15);
+}
+
+.cms-btn {
+  padding: 9px 18px;
+  background: #EC709A;
+  color: #FFF;
+  border: none;
+  border-radius: 9999px;
+  font-family: 'Fredoka', 'Quicksand', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 16px -4px rgba(236, 112, 154, 0.4);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.cms-btn:hover {
+  background: #D45E88;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(236, 112, 154, 0.55);
+}
+
+.cms-btn-secondary {
+  background: #FFF;
+  color: #5B7B1B;
+  border: 1.5px solid #A0C655;
+  box-shadow: 0 4px 12px -2px rgba(91, 123, 27, 0.15);
+}
+
+.cms-btn-secondary:hover {
+  background: #F4F8EB;
+  color: #4A6515;
+}
+
+/* Sync Widgets */
+.cms-sync-card {
+  background: #FFF;
+  border: 2px solid #E5E7EB;
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 14px;
+  transition: all 0.2s;
+}
+
+.cms-sync-card:hover {
+  border-color: #F8C8D8;
+  box-shadow: 0 8px 24px -6px rgba(236, 112, 154, 0.15);
+}
+
+.cms-stat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: #F3F4F6;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 8px;
+  margin-top: 6px;
+}

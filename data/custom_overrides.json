@@ -1,0 +1,230 @@
+{
+  "profile": {
+    "name": "Garima Raj",
+    "tagline": "Data · Grit · Comebacks",
+    "badgeTopLeft": "I'll Find A Way",
+    "badgeBottomRight": "No Backoff",
+    "badgeTopLeftSub": "fav delulu line that gets proven",
+    "badgeBottomRightSub": "honestly, god never gave me that option"
+  },
+  "customProjects": [],
+  "showLeetCodeWidget": true,
+  "showGitHubLive": true,
+  "leetCodeCache": {
+    "totalSolved": 380,
+    "easySolved": 160,
+    "mediumSolved": 185,
+    "hardSolved": 35,
+    "ranking": "Top 12%",
+    "lastUpdated": "2026-11-02"
+  },
+  "gitHubCache": [
+    {
+      "id": 1424688183,
+      "name": "potionlabs-ai-recruitment-engine",
+      "description": "GitHub repository",
+      "url": "https://github.com/Garimaraj15/potionlabs-ai-recruitment-engine",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-10-18T18:34:12Z"
+    },
+    {
+      "id": 1382304923,
+      "name": "fyntune-insurtech-revamp",
+      "description": "GitHub repository",
+      "url": "https://github.com/Garimaraj15/fyntune-insurtech-revamp",
+      "homepage": "https://fyntune-insurtech-revamp.vercel.app",
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-09-22T20:20:17Z"
+    },
+    {
+      "id": 1274021924,
+      "name": "StockSikh",
+      "description": "GitHub repository",
+      "url": "https://github.com/Garimaraj15/StockSikh",
+      "homepage": "https://stock-sikh-three.vercel.app",
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-09-19T14:11:20Z"
+    },
+    {
+      "id": 1362602488,
+      "name": "Seasonal-Agriculture-Performance-Analysis",
+      "description": "GitHub repository",
+      "url": "https://github.com/Garimaraj15/Seasonal-Agriculture-Performance-Analysis",
+      "homepage": null,
+      "language": "Jupyter Notebook",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-09-09T11:55:25Z"
+    },
+    {
+      "id": 1175396846,
+      "name": "garima-portfolio",
+      "description": "My developer portfolio",
+      "url": "https://github.com/Garimaraj15/garima-portfolio",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-08-23T12:49:00Z"
+    },
+    {
+      "id": 1321977960,
+      "name": "popular-tweets-tableau-dashboard",
+      "description": "Interactive Tableau dashboard for Twitter sentiment analysis.",
+      "url": "https://github.com/Garimaraj15/popular-tweets-tableau-dashboard",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-08-22T16:43:05Z"
+    },
+    {
+      "id": 1320535771,
+      "name": "Smart-Civic-Issue-Analytics",
+      "description": "Try 🏛️ Smart Civic Issue Analytics & Predictive Dispatcher",
+      "url": "https://github.com/Garimaraj15/Smart-Civic-Issue-Analytics",
+      "homepage": "https://smart-civic-issue-analytics-iuwrdub3fyayerrt7pp3up.streamlit.app/",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-08-22T15:06:04Z"
+    },
+    {
+      "id": 1324483472,
+      "name": "Military-Inventory-Ration-Stock-Tracker",
+      "description": "Excel VBA based Military Inventory & Ration Stock Tracker with automated dashboard, inventory management, reporting, PDF export and data visualization.",
+      "url": "https://github.com/Garimaraj15/Military-Inventory-Ration-Stock-Tracker",
+      "homepage": null,
+      "language": "Code",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-08-12T10:38:20Z"
+    },
+    {
+      "id": 1226851708,
+      "name": "selenium-automation-tests",
+      "description": "GitHub repository",
+      "url": "https://github.com/Garimaraj15/selenium-automation-tests",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-01T22:45:12Z"
+    },
+    {
+      "id": 1210506006,
+      "name": "ai-stock-learning-platform",
+      "description": "GitHub repository",
+      "url": "https://github.com/Garimaraj15/ai-stock-learning-platform",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-04-18T20:14:26Z"
+    },
+    {
+      "id": 1208084155,
+      "name": "cooking-env",
+      "description": "Smart Cooking Assistant using OpenEnv (RL-based)",
+      "url": "https://github.com/Garimaraj15/cooking-env",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-04-11T20:15:09Z"
+    },
+    {
+      "id": 1205947386,
+      "name": "Ml-Lab",
+      "description": "GitHub repository",
+      "url": "https://github.com/Garimaraj15/Ml-Lab",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-04-09T12:44:33Z"
+    },
+    {
+      "id": 1054209266,
+      "name": "ab-test-csv",
+      "description": "GitHub repository",
+      "url": "https://github.com/Garimaraj15/ab-test-csv",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-09-10T16:17:11Z"
+    },
+    {
+      "id": 1053681383,
+      "name": "ab-test-project",
+      "description": "GitHub repository",
+      "url": "https://github.com/Garimaraj15/ab-test-project",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-09-09T20:35:10Z"
+    },
+    {
+      "id": 1018323478,
+      "name": "Skill-Swap-Platform",
+      "description": "deployed link=https://skill-swap-platform-age6.onrender.com/",
+      "url": "https://github.com/Garimaraj15/Skill-Swap-Platform",
+      "homepage": "",
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-07-12T12:42:15Z"
+    },
+    {
+      "id": 1001854336,
+      "name": "retailsphere",
+      "description": "RetailSphere – An All-in-One In-Store Intelligence Companion",
+      "url": "https://github.com/Garimaraj15/retailsphere",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-06-27T08:47:06Z"
+    },
+    {
+      "id": 850468242,
+      "name": "localrepo",
+      "description": "GitHub repository",
+      "url": "https://github.com/Garimaraj15/localrepo",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2024-08-31T22:04:50Z"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Oracle Certified Associate, Java SE 8 Programmer",
+      "issuer": "Oracle",
+      "date": "2024",
+      "link": "#"
+    },
+    {
+      "title": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "date": "2024",
+      "link": "#"
+    },
+    {
+      "title": "Data Engineering with Databricks",
+      "issuer": "Databricks",
+      "date": "2024",
+      "link": "#"
+    }
+  ]
+}

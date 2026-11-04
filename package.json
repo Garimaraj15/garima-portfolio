@@ -1,0 +1,16 @@
+{
+  "name": "garima-raj-portfolio",
+  "version": "1.0.0",
+  "description": "Garima Raj - Official Personal Portfolio & Interactive Story",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "serve": "python server.py"
+  },
+  "keywords": ["portfolio", "react", "garima-raj", "data-science"],
+  "author": "Garima Raj",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
